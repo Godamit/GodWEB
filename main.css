@@ -1,0 +1,50 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.content{
+    height: auto;
+    width: 100%;
+    margin: 0;
+    max width: 1200px;
+    padding: 40px 0 40px 0;
+    background: url(A4.jpg) no-repeat 50% 50%;
+}
+
+.heroback{    
+    height: 100vh;
+    background: url(./img/A4.jpg) no-repeat ;
+    background-size: cover;    
+}
+
+
+p{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #fff;
+    font-weight:bold;
+    line-height: 30px;
+}
+
+h1{
+    color: #fff;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.heroback img{
+    width: 100%;
+    /* position: absolute; */
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+#h5{
+    text-decoration: none;
+    color: gold;
+    z-index: 15;
+    font-size: 8em;
+}

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <style>
+    body {
+  display: flex;
+  justify-content: right;
+  align-items:center;
+  width: 100%;
+  height: 100vh;
+
+  
+
+  background: url(pexels-miguel-á-padriñán-2120614.jpg)  ;
+  background-size: cover;
+}
+
+#noButton {
+  position: absolute;
+  margin-left: 150px;
+  transition: 0.5s;
+  margin-top: 30px;
+}
+
+#yesButton {
+  position: absolute;
+  margin-right: 150px;
+  margin-top: 30px;
+}
+
+.header_text {
+  font-family:
+  font-size: 2em;
+  font-weight: bold;
+    /* opacity: 0; */
+ 
+  margin-top: 200px;
+  margin-bottom: 20px;
+  margin: right 500px;
+  
+  color: #ffffff;
+}
+
+.text {
+  font-family: "Nunito";
+  font-size: 200px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 20px;
+  margin-left: 20px; */
+}
+
+.btn {
+  background-color: pink;
+  color: black;
+  font-weight: 600;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  /* margin-bottom: 470px; */
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 3px 3px red
+}
+
+.btn:hover {
+  background-color: #440a0a;
+  color: #ffffff;
+
+}
+#p1{
+    color: beige;
+}
+
+h1,#p2{
+    font-weight: bold;
+    padding-right: 10%;
+}
+
+#p1{
+    padding-right: 10%;
+    
+}
+#p2{
+    font-weight: normal;
+    color: bisque;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header{
+    width: 60vb;
+    height: 10%;
+    background-color: #440a0a;
+    position: fixed;
+    top: 1%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+nav a{
+    width: 1.5rem;
+    /* border: solid 1px white; */
+    align-items:center;
+    justify-content: center;
+    text-decoration: none;
+    color:white;
+    
+}
+nav{
+    width: 60vb;
+    height: 10%;
+    /* background-color: #440a0a; */
+    position: fixed;
+    top: 1%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    /* border: solid 1px white; */
+    
+}
+    li{
+        text-align: center;
+        flex:1;
+    }
+ul{
+    width: 60vb;
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    padding-left: 20px;
+    /* border: solid 1px white; */
+    align-items:center;
+    justify-content: center;
+
+}
+
+
+nav a::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    /* transition: 1s; */
+    transition: left 1s linear,  0.5s ease-in-out ;
+}
+nav a:hover::after{
+    width: 100%;
+}
+/* 
+.container{
+    background-color: blue;
+    height: 7em;
+    margin-top: 400px;
+} */
+
+
+  </style>
+  <body>
+    
+        <nav>
+            <ul>
+                <li><a href="">NOTES</a></li>
+                <li><a href="">ABOUT U</a></li>
+                <li><a href="">GIFTS</a></li>
+            </ul>
+        </nav>
+    
+    <div class="h3">
+      <div >
+        <h1 class="header_text" id="intro-paragraph">Hey Miss Universe</h1>
+        <p id="p1">You're the sweetest and most amazing girl I hv ever met.....<br>It'll be a great honour if you would like to give your presence to this idiot who's missing you alot.
+       
+        <p id="p2">Would you pleaseeee go on a date with me <333</p><br></p>
+      </div>
+      
+      <div class="gif_container">
+        
+      </div>
+      <div class="buttons">
+        <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+        <button
+          class="btn"
+          id="noButton"
+          onmouseover="moveButton()"
+          onclick="moveButton()"
+        >
+          No
+        </button>
+
+        <script defer>
+          function nextPage() {
+            window.location.href = "yes.html";
+          }
+
+          function moveButton() {
+            var x =
+              Math.random() *
+              (window.innerWidth -
+                document.getElementById("noButton").offsetWidth);
+            var y =
+              Math.random() *
+              (window.innerHeight -
+                document.getElementById("noButton").offsetHeight);
+            document.getElementById("noButton").style.left = `${x}px`;
+            document.getElementById("noButton").style.top = `${y}px`;
+            console.log(Math.random());
+            let p = document.getElementById("noButton").offsetHeight;
+            console.log(p);
+        }
+
+
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            const paragraph = document.getElementById("intro-paragraph");
+            const text = paragraph.textContent.trim();
+            paragraph.textContent = "";
+
+            let i = 0;
+
+            function revealText() {
+                if (i < text.length) {
+                    paragraph.innerHTML += text.charAt(i);
+                    paragraph.classList.remove("hidden"); // Remove the 'hidden' class immediately
+                    i++;
+                  setTimeout(revealText, 150);
+                }
+            }
+
+            revealText();
+        });
+    
+
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hidden {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
+    <title>Your Page Title</title>
+</head>
+<body>
+    <div id="intro-paragraph" class="hidden">
+        <p>Your paragraph goes here.</p>
+    </div>
+
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function() {
+            const paragraph = document.getElementById("intro-paragraph");
+            const text = paragraph.textContent.trim();
+            paragraph.textContent = "";
+
+            let i = 0;
+
+            function revealText() {
+                if (i < text.length) {
+                    paragraph.innerHTML += text.charAt(i);
+                    paragraph.classList.remove("hidden"); // Remove the 'hidden' class immediately
+                    i++;
+                    setTimeout(revealText, 100);
+                }
+            }
+
+            revealText();
+        });
+    </script>
+</body>
+</html>

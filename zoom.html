@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="zoom.css">
+
+</head>
+<body>
+    <a href="prank.html">
+        Content goes here!
+    </a>>
+    <div class="zoom">
+        <h1 id="m1">Scroll me 
+        </h1>
+    </div>
+    <div class="temp">
+
+    </div>
+
+
+
+    <div class="cont">
+        <h5>
+            bLOGS
+        </h5>
+        <div class="co">
+            <img src="./img/963957.jpg" id="img1">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nam ipsam deleniti ea quas numquam inventore iusto enim ipsum adipisci porro dicta mollitia placeat maxime molestias tenetur modi, in possimus?</p>
+        </div>
+        
+        <!-- <h1>Theeeekee bhaiii</h1> -->
+    </div>
+    
+</body>
+
+<!-- scripting starts -->
+<script type="text/javascript">
+   document.addEventListener('DOMContentLoaded', function() {
+  // Check if the current page is home.html
+  if (window.location.pathname.includes("zoom")) {
+    // Check if the flag is not set indicating a reload
+    if (!sessionStorage.getItem("redirected")) {
+      // Set the flag to indicate redirection
+      sessionStorage.setItem("redirected", true);
+      // Redirect to login.html
+      window.location.href = "http://127.0.0.1:5500/login.html";
+    } else {
+      // Clear the flag if it's set, so the redirection doesn't occur again
+      sessionStorage.removeItem("redirected");
+    }
+  }
+});
+
+    const zoomElement = document.querySelector("h1");
+    let zoomm = 2;
+    const ZOOM_SPEEDD = 1;
+    
+    let zoo = document.getElementsByClassName("zoom")[0];
+    console.log("xy : ", zoo);
+    
+    window.addEventListener("scroll", (e) => {
+        let topVal = $(window).scrollTop();
+        let windowWidth = window.innerWidth;
+    
+        // Adjust the scaling factor based on the window width
+        let scaleFactor = 1 + topVal * 0.056 - (windowWidth < 600 ? 0.1 : 0);
+    
+        if (topVal >= 3000) {
+            zoo.style.display = 'none';
+        } else if (topVal < 3000) {
+            zoo.style.display = 'flex';
+        }
+    
+        zoomElement.style.transform = `scale(${scaleFactor})`;
+    });
+
+
+    
+    </script>
+
+<!-- <script type="text/javascript">
+
+const zoomElement = document.querySelector("h1");
+// const zoo = document.querySelector("zoom");
+let zoomm = 2;
+const ZOOM_SPEEDD =1 ;
+
+let zoo = document.getElementsByClassName("zoom")[0]
+console.log("xy : ",zoo);
+window.addEventListener("scroll", (e) =>{  
+    // alert("dd");
+    let topVal = $(window).scrollTop();
+    console.log(topVal)
+
+    if(topVal >=4000){
+        zoo.style.display = 'none';
+    }
+    else if (topVal <4000){
+        zoo.style.display = 'flex';
+    }
+    zoomElement.style.transform = `scale(${1 + topVal*0.12})`;
+    
+});
+
+
+
+
+</script> -->
+
+</html>
